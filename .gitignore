@@ -8,4 +8,4 @@ interdiff.txt
 .idea/*
 
 # Library
-/system/library/siel/*
+/system/library/siel/acumulus/
