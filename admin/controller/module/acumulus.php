@@ -50,9 +50,9 @@ class Acumulus extends Controller
      * @return string
      *   The location of the extension's files.
      */
-    protected function getLocation(): string
+    protected function getExtensionRoute(): string
     {
-        return 'extension/acumulus';
+        return $this->ocHelper->getExtensionRoute();
     }
 
     /**
@@ -164,13 +164,14 @@ class Acumulus extends Controller
      */
     public function eventViewColumnLeft(/** @noinspection PhpUnusedParameterInspection */string $route, array &$data): void
     {
-        if ($this->user->hasPermission('access', $this->getLocation())) {
+        /** @noinspection PhpParamsInspection remove when we are at PHP 8.0 level */
+        if ($this->user->hasPermission('access', $this->getExtensionRoute())) {
             $this->ocHelper->eventViewColumnLeft($data['menus']);
         }
     }
 
     /**
-     * Adds our menu-items to the admin menu.
+     * Adds our stylesheet and javascript to the page header.
      *
      * param string $route
      *   The current route (common/column_left).
@@ -182,7 +183,8 @@ class Acumulus extends Controller
      */
     public function eventControllerSaleOrderInfo(): void
     {
-        if ($this->user->hasPermission('access', $this->getLocation())) {
+        /** @noinspection PhpParamsInspection remove when we are at PHP 8.0 level */
+        if ($this->user->hasPermission('access', $this->getExtensionRoute())) {
             $this->ocHelper->eventControllerSaleOrderInfo();
         }
     }
@@ -205,8 +207,9 @@ class Acumulus extends Controller
         array &$data,
         /** @noinspection PhpUnusedParameterInspection */ string &$code
     ): void {
-        if ($this->user->hasPermission('access', $this->getLocation())) {
-            $this->ocHelper->eventViewSaleOrderInfo($data['order_id'], $data['tabs']);
+        /** @noinspection PhpParamsInspection remove when we are at PHP 8.0 level */
+        if ($this->user->hasPermission('access', $this->getExtensionRoute())) {
+            $this->ocHelper->eventViewSaleOrderInfo((int) $data['order_id'], $data['tabs']);
         }
     }
 }

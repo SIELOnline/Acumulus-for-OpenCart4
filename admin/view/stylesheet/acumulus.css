@@ -58,22 +58,6 @@ details summary {
     padding-left: 34px;
 }
 
-#tab-acumulus-invoice .inside {
-    padding-right: 0;
-    line-height: 1.4em;
-}
-
-/* Refund overview */
-#tab-acumulus-invoice details {
-    font-size: 13px;
-    border: none;
-}
-
-#tab-acumulus-invoice .invoice-sent-concept {
-    float: left;
-    width: 85%;
-}
-
 /* Refund overview title */
 #tab-acumulus-invoice summary {
     font-size: 14px;
@@ -82,17 +66,26 @@ details summary {
     margin-bottom: 6px;
 }
 
-#tab-acumulus-invoice .label {
-    text-align: left;
-    vertical-align: top;
-    font-weight: normal;
-    display: inline-block;
-    padding-right: 1em;
+/* Refund overview */
+#tab-acumulus-invoice details {
+    font-size: 13px;
+    border: none;
 }
 
-[class*="acumulus-document"] {
-    display: inline-block;
+/*#tab-acumulus-invoice .invoice-sent-concept {*/
+/*    float: left;*/
+/*    width: 85%;*/
+/*}*/
+
+#tab-acumulus-invoice label + .offset-sm-2 {
+    margin-left: 0;
+    padding-top: calc(0.5385rem + 1px);
+    padding-bottom: calc(0.5385rem + 1px);
 }
+
+/*[class*="acumulus-document"] {*/
+/*    display: inline-block;*/
+/*}*/
 
 #tab-acumulus-invoice [class*="acumulus-document"] {
     padding-left: 34px;
@@ -106,11 +99,8 @@ details summary {
 }
 
 #tab-acumulus-invoice a[class*="acumulus-document"] {
+    display: inline-block;
     padding-top: 8px;
-}
-
-#tab-acumulus-invoice input[class*="acumulus-document"]:first-of-type {
-    margin-left: 16.6666666667%;
 }
 
 #tab-acumulus-invoice [class*="acumulus-document-invoice"] {
@@ -119,6 +109,35 @@ details summary {
 
 #tab-acumulus-invoice [class*="acumulus-document-packing-slip"] {
     background-image: url("../image/acumulus-packing-slip.png");
+}
+
+#tab-acumulus-invoice .row.mb-3:not(:nth-child(1)) {
+    padding-top: 1rem;
+}
+
+#tab-acumulus-invoice .acumulus-links + .col-sm-10 {
+    margin-left: 16.666667%;
+}
+
+#tab-acumulus-invoice fieldset > .row.mb-3:nth-child(5):before {
+    border-bottom-width: 0;
+}
+
+#tab-acumulus-invoice fieldset > .row.mb-3:nth-child(5) {
+    padding-top: 0;
+}
+
+#tab-acumulus-invoice fieldset > .row.mb-3:last-child {
+    border-top: 1px solid #ededed;
+}
+
+#tab-acumulus-invoice .acumulus-links ~ .col-sm-10 {
+    width: auto;
+    padding-right: 0;
+}
+
+#tab-acumulus-invoice .acumulus-links + .col-sm-10 + .col-sm-10 {
+    padding-left: 0;
 }
 
 #tab-acumulus-invoice .notice {
@@ -149,14 +168,6 @@ details summary {
     color: #46b450;
 }
 
-#tab-acumulus-invoice .adminform > .row:nth-child(3) > div {
-    float: left;
-}
-
-#tab-acumulus-invoice .adminform > .row:nth-child(4) {
-    clear: left;
-}
-
 .acumulus-amount .amount {
     display: block;
     width: 6em;
@@ -175,14 +186,6 @@ details summary {
 .acumulus-amount .amount .currency {
     float: left;
     width: 0.25em;
-}
-
-#tab-acumulus-invoice .adminform > .row:nth-child(6) {
-    border-top-width: 0;
-}
-
-#tab-acumulus-invoice .adminform > .row:last-child {
-    border-top: 1px solid #ededed;
 }
 
 /*

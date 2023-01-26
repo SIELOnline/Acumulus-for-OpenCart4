@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Opencart\Catalog\Controller\Extension\PayPal\Module;
+namespace Opencart\Catalog\Controller\Extension\Acumulus\Module;
 
 use Opencart\System\Engine\Controller;
 use Opencart\System\Engine\Registry;
 use Siel\Acumulus\Helpers\Container;
-use Siel\Acumulus\OpenCart\Helpers\OcHelper;
+use Siel\Acumulus\OpenCart\Opencart4\Helpers\OcHelper;
 use SielAcumulusAutoloader;
 
 /**
