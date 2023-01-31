@@ -51,7 +51,7 @@ details summary {
  * Acumulus invoice status overview "form".
  */
 .nav > li > a[href="#tab-acumulus-invoice"] {
-    background-image: url("../image/siel-logo.png");
+    background-image: url("../../image/acumulus/siel-logo.png");
     background-size: 16px;
     background-repeat: no-repeat;
     background-position: 15px center;
@@ -104,11 +104,11 @@ details summary {
 }
 
 #tab-acumulus-invoice [class*="acumulus-document-invoice"] {
-    background-image: url("../image/acumulus-invoice.png");
+    background-image: url("../../image/acumulus/acumulus-invoice.png");
 }
 
 #tab-acumulus-invoice [class*="acumulus-document-packing-slip"] {
-    background-image: url("../image/acumulus-packing-slip.png");
+    background-image: url("../../image/acumulus/acumulus-packing-slip.png");
 }
 
 #tab-acumulus-invoice .row.mb-3:not(:nth-child(1)) {

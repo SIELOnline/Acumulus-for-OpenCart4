@@ -31,7 +31,7 @@ class Acumulus extends Controller
         parent::__construct($registry);
         if (!isset($this->ocHelper)) {
             if (!isset(static::$staticOcHelper)) {
-                // Load autoloader, container and then our helper that contains
+                // Load autoloader, container, and then our helper that contains
                 // OC3 and OC4 shared code.
                 require_once(DIR_EXTENSION . 'acumulus/system/library/siel/acumulus/SielAcumulusAutoloader.php');
                 SielAcumulusAutoloader::register();
@@ -50,9 +50,9 @@ class Acumulus extends Controller
      * @return string
      *   The location of the extension's files.
      */
-    protected function getExtensionRoute(): string
+    protected function getRoute(): string
     {
-        return $this->ocHelper->getExtensionRoute();
+        return \Siel\Acumulus\OpenCart\Helpers\Registry::getInstance()->getRoute('');
     }
 
     /**
@@ -76,11 +76,21 @@ class Acumulus extends Controller
     }
 
     /**
-     * Main controller action: show/process the basic settings form.
+     * Main controller action: the config form.
      *
      * @throws \Throwable
      */
     public function index(): void
+    {
+        $this->config();
+    }
+
+    /**
+     * Controller action: show/process the basic settings form.
+     *
+     * @throws \Throwable
+     */
+    public function config(): void
     {
         $this->ocHelper->config();
     }
@@ -165,7 +175,7 @@ class Acumulus extends Controller
     public function eventViewColumnLeft(/** @noinspection PhpUnusedParameterInspection */string $route, array &$data): void
     {
         /** @noinspection PhpParamsInspection remove when we are at PHP 8.0 level */
-        if ($this->user->hasPermission('access', $this->getExtensionRoute())) {
+        if ($this->user->hasPermission('access', $this->getRoute())) {
             $this->ocHelper->eventViewColumnLeft($data['menus']);
         }
     }
@@ -184,7 +194,7 @@ class Acumulus extends Controller
     public function eventControllerSaleOrderInfo(): void
     {
         /** @noinspection PhpParamsInspection remove when we are at PHP 8.0 level */
-        if ($this->user->hasPermission('access', $this->getExtensionRoute())) {
+        if ($this->user->hasPermission('access', $this->getRoute())) {
             $this->ocHelper->eventControllerSaleOrderInfo();
         }
     }
@@ -208,7 +218,7 @@ class Acumulus extends Controller
         /** @noinspection PhpUnusedParameterInspection */ string &$code
     ): void {
         /** @noinspection PhpParamsInspection remove when we are at PHP 8.0 level */
-        if ($this->user->hasPermission('access', $this->getExtensionRoute())) {
+        if ($this->user->hasPermission('access', $this->getRoute())) {
             $this->ocHelper->eventViewSaleOrderInfo((int) $data['order_id'], $data['tabs']);
         }
     }
