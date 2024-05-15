@@ -1,4 +1,7 @@
 <?php
+/**
+ * @noinspection PhpIllegalPsrClassPathInspection
+ */
 
 declare(strict_types=1);
 
@@ -8,7 +11,8 @@ use Opencart\System\Engine\Controller;
 use Opencart\System\Engine\Registry;
 use Siel\Acumulus\Helpers\Container;
 use Siel\Acumulus\OpenCart\Opencart4\Helpers\OcHelper;
-use SielAcumulusAutoloader;
+
+use function dirname;
 
 /**
  * This is the Acumulus controller for the catalog side.
@@ -29,13 +33,12 @@ class Acumulus extends Controller
         parent::__construct($registry);
         if (!isset($this->ocHelper)) {
             if (!isset(static::$staticOcHelper)) {
-                // Load autoloader, container and then our helper that contains
-                // OC3 and OC4 shared code.
-                require_once(DIR_EXTENSION . 'acumulus/system/library/siel/acumulus/SielAcumulusAutoloader.php');
-                SielAcumulusAutoloader::register();
-                // Language will be set by the helper.
+                // Load autoloader
+                require_once dirname(__FILE__, 4) . '/vendor/autoload.php';
+
+                // Load our Container, language will be set by the helper.
                 $container = new Container('OpenCart\OpenCart4');
-                /** @noinspection PhpFieldAssignmentTypeMismatchInspection */
+                // Load our OcHelper that contains OC3 and OC4 shared code.
                 static::$staticOcHelper = $container->getInstance('OcHelper', 'Helpers', [$this->registry, $container]);
             }
             $this->ocHelper = static::$staticOcHelper;

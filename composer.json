@@ -1,0 +1,35 @@
+{
+    "name": "siel/acumulus-opencart",
+    "description": "Integrates OpenCart with your Siel Acumulus online administration",
+    "type": "opencart-extension",
+    "version": "8.1.2",
+    "license": [
+        "GPL-3.0"
+    ],
+    "homepage": "https://github.com/SIELOnline/Acumulus-for-OpenCart4",
+    "authors": [
+        {
+            "name": "Buro RaDer",
+            "homepage": "https://burorader.com/",
+            "role": "developer"
+        },
+        {
+            "name": "SIEL",
+            "homepage": "https://siel.nl/",
+            "role": "copyright owner"
+        }
+    ],
+    "require": {
+        "siel/acumulus": "^8.1.1",
+        "ext-dom": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Siel\\Acumulus\\Tests\\OpenCart\\": "tests/OpenCart/"
+        }
+    }
+}

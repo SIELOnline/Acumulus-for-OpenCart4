@@ -1,4 +1,7 @@
 <?php
+/**
+ * @noinspection PhpIllegalPsrClassPathInspection
+ */
 
 declare(strict_types=1);
 
@@ -8,7 +11,8 @@ use Opencart\System\Engine\Controller;
 use Opencart\System\Engine\Registry;
 use Siel\Acumulus\Helpers\Container;
 use Siel\Acumulus\OpenCart\OpenCart4\Helpers\OcHelper;
-use SielAcumulusAutoloader;
+
+use function dirname;
 
 /**
  * This is the Acumulus admin side controller.
@@ -31,13 +35,12 @@ class Acumulus extends Controller
         parent::__construct($registry);
         if (!isset($this->ocHelper)) {
             if (!isset(static::$staticOcHelper)) {
-                // Load autoloader, container, and then our helper that contains
-                // OC3 and OC4 shared code.
-                require_once(DIR_EXTENSION . 'acumulus/system/library/siel/acumulus/SielAcumulusAutoloader.php');
-                SielAcumulusAutoloader::register();
-                // Language will be set by the helper.
+                // Load autoloader
+                require_once dirname(__FILE__, 4) . '/vendor/autoload.php';
+
+                // Load our Container, language will be set by the helper.
                 $container = new Container('OpenCart\OpenCart4');
-                /** @noinspection PhpFieldAssignmentTypeMismatchInspection */
+                // Load our OcHelper that contains OC3 and OC4 shared code.
                 static::$staticOcHelper = $container->getInstance('OcHelper', 'Helpers', [$this->registry, $container]);
             }
             $this->ocHelper = static::$staticOcHelper;
@@ -172,9 +175,8 @@ class Acumulus extends Controller
      *
      * @noinspection PhpUnused : event handler
      */
-    public function eventViewColumnLeft(/** @noinspection PhpUnusedParameterInspection */string $route, array &$data): void
+    public function eventViewColumnLeft(/** @noinspection PhpUnusedParameterInspection */ string $route, array &$data): void
     {
-        /** @noinspection PhpParamsInspection remove when we are at PHP 8.0 level */
         if ($this->user->hasPermission('access', $this->getRoute())) {
             $this->ocHelper->eventViewColumnLeft($data['menus']);
         }
@@ -193,7 +195,6 @@ class Acumulus extends Controller
      */
     public function eventControllerSaleOrderInfo(): void
     {
-        /** @noinspection PhpParamsInspection remove when we are at PHP 8.0 level */
         if ($this->user->hasPermission('access', $this->getRoute())) {
             $this->ocHelper->eventControllerSaleOrderInfo();
         }
@@ -217,7 +218,6 @@ class Acumulus extends Controller
         array &$data,
         /** @noinspection PhpUnusedParameterInspection */ string &$code
     ): void {
-        /** @noinspection PhpParamsInspection remove when we are at PHP 8.0 level */
         if ($this->user->hasPermission('access', $this->getRoute())) {
             $this->ocHelper->eventViewSaleOrderInfo((int) $data['order_id'], $data['tabs']);
         }
