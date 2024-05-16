@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 /**
  * Class AcumulusTestsBootstrap bootstraps the Acumulus tests.
+ *
+ * The main task of this class is loading and initializing the shop environment.
  */
 class AcumulusTestsBootstrap
 {

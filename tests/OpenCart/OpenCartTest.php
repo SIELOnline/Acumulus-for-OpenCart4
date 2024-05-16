@@ -27,6 +27,7 @@ class OpenCartTest extends TestCase
 
     protected static function getAcumulusContainer(): Container
     {
+        /** @var \Opencart\System\Engine\Registry $ocRegistry */
         global $ocRegistry;
         // Load autoloader
         require_once dirname(__FILE__, 3) . '/vendor/autoload.php';

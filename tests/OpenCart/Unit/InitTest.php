@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 namespace Siel\Acumulus\Tests\OpenCart\Unit;
 
+use Opencart\Admin\Model\Sale\Order;
 use Siel\Acumulus\Config\Environment;
 use Siel\Acumulus\Tests\OpenCart\OpenCartTest;
 
@@ -18,8 +19,9 @@ class InitTest extends OpenCartTest
     /**
      * A single test to see if the test framework (including the plugins) has been
      * initialized correctly:
-     * 1 We have access to the Container.
-     * 2 OpenCart and the database have been initialized.
+     * 1 Access to our Container.
+     * 2 OpenCart has been initialized
+     * 3 Access to the database.
      */
     public function testInit(): void
     {
@@ -27,6 +29,13 @@ class InitTest extends OpenCartTest
         $environmentInfo = $this->getAcumulusContainer()->getEnvironment()->get();
         // 2.
         $this->assertMatchesRegularExpression('|\d+\.\d+\.\d+\.\d+|', $environmentInfo['shopVersion']);
+        // 3.
         $this->assertNotEquals(Environment::Unknown, $environmentInfo['dbVersion']);
+        // 2+3.
+        /** @var \Opencart\System\Engine\Registry $ocRegistry */
+        global $ocRegistry;
+        /** @var \Siel\Acumulus\OpenCart\Helpers\Registry $registry */
+        $registry = $this->getAcumulusContainer()->getInstance('Registry', 'Helpers', [$ocRegistry]);
+        $this->assertNotEmpty($registry->getOrderModel()->getOrder(1));
     }
 }
