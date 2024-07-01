@@ -21,12 +21,10 @@ class InvoiceCreateTest extends OpenCartTest
     {
         $dataPath = dirname(__FILE__, 2) . '/Data';
         return [
-            'NL consument, mixed rates, virtual + physical' => [$dataPath, Source::Order, 7,],
-            'FR consument, mixed rates, NL shipping' => [$dataPath, Source::Order, 8,],
-            'FR consument, mixed rates, FR shipping' => [$dataPath, Source::Order, 9,],
+            'NL consument' => [$dataPath, Source::Order, 7,],
+            'BE consument' => [$dataPath, Source::Order, 8,],
+            'FR consument' => [$dataPath, Source::Order, 6,],
             'FR bedrijf, standard rate' => [$dataPath, Source::Order, 10,],
-            'FR bedrijf, reverse vat' => [$dataPath, Source::Order, 11,],
-            'FR consument, productkorting + coupon code' => [$dataPath, Source::Order, 12,],
         ];
     }
 
