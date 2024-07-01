@@ -33,6 +33,12 @@ details summary {
     padding: 0;
 }
 
+summary span {
+    display: inline-block;
+    font-size: smaller;
+    padding-left: 1em;
+}
+
 /*
  * Register form
  */
