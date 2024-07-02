@@ -230,13 +230,11 @@ class Acumulus extends Controller
      *
      * @throws \Throwable
      *
-     * @noinspection PhpUnused : event handler
+     * @noinspection PhpUnused Event handler
+     * @noinspection PhpUnusedParameterInspection
      */
-    public function eventViewSaleOrderInfo(
-        /** @noinspection PhpUnusedParameterInspection */ string $route,
-        array &$data,
-        /** @noinspection PhpUnusedParameterInspection */ string &$code
-    ): void {
+    public function eventViewSaleOrderInfo(string $route, array &$data, string &$code): void
+    {
         if ($this->user->hasPermission('access', $this->getRoute())) {
             static::$ocHelper->eventViewSaleOrderInfo((int) $data['order_id'], $data['tabs']);
         }

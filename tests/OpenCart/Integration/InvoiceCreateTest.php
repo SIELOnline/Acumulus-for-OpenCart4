@@ -24,7 +24,7 @@ class InvoiceCreateTest extends OpenCartTest
             'NL consument' => [$dataPath, Source::Order, 7,],
             'BE consument' => [$dataPath, Source::Order, 8,],
             'FR consument' => [$dataPath, Source::Order, 6,],
-            'FR bedrijf, standard rate' => [$dataPath, Source::Order, 10,],
+            'FR bedrijf, EU VAT' => [$dataPath, Source::Order, 10,],
         ];
     }
 
