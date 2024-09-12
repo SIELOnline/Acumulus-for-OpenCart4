@@ -40,4 +40,12 @@ class OpenCartTest extends TestCase
         }
         return static::$container;
     }
+
+    protected static function getOcHelper(): OcHelper
+    {
+        if (!isset(static::$ocHelper)) {
+            self::getAcumulusContainer();
+        }
+        return static::$ocHelper;
+    }
 }
