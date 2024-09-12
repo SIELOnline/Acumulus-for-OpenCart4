@@ -5,9 +5,8 @@
 
 declare(strict_types=1);
 
-namespace Siel\Acumulus\Tests\OpenCart\Unit;
+namespace Siel\Acumulus\Tests\Unit\OpenCart;
 
-use Opencart\Admin\Model\Sale\Order;
 use Siel\Acumulus\Config\Environment;
 use Siel\Acumulus\Tests\OpenCart\OpenCartTest;
 

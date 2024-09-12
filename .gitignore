@@ -8,7 +8,7 @@ vendor/
 
 # Not all tests artifacts are committed.
 /tests/.phpunit.result.cache
-/tests/OpenCart/Data/*.latest.json
+/tests/Integration/OpenCart/Data/*.latest.json
 
 # PHPStorm
 .idea/*

@@ -7,8 +7,8 @@ declare(strict_types=1);
 
 namespace Siel\Acumulus\Tests\OpenCart;
 
-use PHPUnit\Framework\TestCase;
 use OpenCart;
+use PHPUnit\Framework\TestCase;
 use Siel\Acumulus\Helpers\Container;
 use Siel\Acumulus\OpenCart\Helpers\OcHelper;
 use Siel\Acumulus\Tests\AcumulusTestUtils;

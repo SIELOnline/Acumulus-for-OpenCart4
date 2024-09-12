@@ -30,7 +30,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Siel\\Acumulus\\Tests\\OpenCart\\": "tests/OpenCart/",
+            "Siel\\Acumulus\\Tests\\": ["tests/", "vendor/siel/acumulus/tests/"],
             "Siel\\Acumulus\\TestWebShop\\": "vendor/siel/acumulus/tests/TestWebShop/"
         }
     }

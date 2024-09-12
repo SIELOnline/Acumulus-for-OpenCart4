@@ -5,7 +5,7 @@
 
 declare(strict_types=1);
 
-namespace Siel\Acumulus\Tests\OpenCart\Integration;
+namespace Siel\Acumulus\Tests\Integration\OpenCart;
 
 use Siel\Acumulus\Invoice\Source;
 use Siel\Acumulus\Tests\OpenCart\OpenCartTest;
