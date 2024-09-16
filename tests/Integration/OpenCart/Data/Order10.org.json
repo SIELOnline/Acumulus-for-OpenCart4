@@ -68,7 +68,7 @@
                     "meta-vatrate-lookup": "['20.0000']",
                     "meta-vatrate-lookup-label": "['FR High']",
                     "meta-line-type": "shipping",
-                    "meta-vatrate-lookup-matches": "[{'vatrate':'20.0000','vattype':6}]",
+                    "meta-vatrate-lookup-matches": "[{'vatrate':20.0,'vattype':6}]",
                     "unitpriceinc": 6.0,
                     "meta-fields-calculated": "['unitpriceinc','vatamount (from vatrate)']",
                     "nature": "Product",

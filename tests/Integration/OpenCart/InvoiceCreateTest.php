@@ -19,7 +19,7 @@ class InvoiceCreateTest extends OpenCartTest
 {
     public function InvoiceDataProvider(): array
     {
-        $dataPath = dirname(__FILE__, 2) . '/Data';
+        $dataPath = dirname(__FILE__, 1) . '/Data';
         return [
             'NL consument' => [$dataPath, Source::Order, 7,],
             'BE consument' => [$dataPath, Source::Order, 8,],

@@ -41,7 +41,7 @@
                     "meta-vatrate-lookup": "['21.0000']",
                     "meta-vatrate-lookup-label": "['NL High']",
                     "meta-line-type": "order-item",
-                    "meta-vatrate-range-matches": "[{'vatrate':'21.0000','vattype':1}]",
+                    "meta-vatrate-range-matches": "[{'vatrate':21.0,'vattype':1}]",
                     "unitpriceinc": 121.0,
                     "meta-fields-calculated": "['unitpriceinc']",
                     "meta-children-merged": 1
@@ -63,7 +63,7 @@
                     "meta-vatrate-lookup": "['21.0000']",
                     "meta-vatrate-lookup-label": "['NL High']",
                     "meta-line-type": "order-item",
-                    "meta-vatrate-range-matches": "[{'vatrate':'21.0000','vattype':1}]",
+                    "meta-vatrate-range-matches": "[{'vatrate':21.0,'vattype':1}]",
                     "unitpriceinc": 122.21,
                     "meta-fields-calculated": "['unitpriceinc']"
                 },
@@ -79,7 +79,7 @@
                     "meta-vatrate-lookup": "['21.0000']",
                     "meta-vatrate-lookup-label": "['NL High']",
                     "meta-line-type": "shipping",
-                    "meta-vatrate-lookup-matches": "[{'vatrate':'21.0000','vattype':1}]",
+                    "meta-vatrate-lookup-matches": "[{'vatrate':21.0,'vattype':1}]",
                     "unitpriceinc": 6.05,
                     "meta-fields-calculated": "['unitpriceinc','vatamount (from vatrate)']",
                     "nature": "Product",

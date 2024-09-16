@@ -21,8 +21,8 @@ use Siel\Acumulus\Tests\OpenCart\OpenCartTest;
  */
 class AcumulusEntryManagerTest extends OpenCartTest
 {
-    private const testSourceType = Source::CreditNote;
-    private const testSourceId = 72;
+    private const testSourceType = Source::Order;
+    private const testSourceId = 9;
     private const testConceptId = 2; // Acumulus concept ids are auto incrementing and will never equal this anymore.
     private const testEntryId = 1; // Acumulus entry ids are auto incrementing and will never equal this anymore.
     private const testToken = 'TESTTOKEN0123456789TESTTOKENtest';
