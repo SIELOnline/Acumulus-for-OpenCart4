@@ -14,6 +14,8 @@ use function dirname;
 
 /**
  * InvoiceCreateTest tests the process of creating an {@see Invoice}.
+ *
+ * @todo: add tests for other fees.
  */
 class InvoiceCreateTest extends OpenCartTest
 {
@@ -22,7 +24,7 @@ class InvoiceCreateTest extends OpenCartTest
         $dataPath = dirname(__FILE__, 1) . '/Data';
         return [
             'NL consument' => [$dataPath, Source::Order, 7,],
-            'BE consument' => [$dataPath, Source::Order, 8,],
+            'BE consument, voucher' => [$dataPath, Source::Order, 8,],
             'FR consument' => [$dataPath, Source::Order, 6,],
             'FR bedrijf, EU VAT' => [$dataPath, Source::Order, 10,],
         ];

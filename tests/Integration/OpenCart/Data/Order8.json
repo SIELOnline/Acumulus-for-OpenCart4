@@ -80,9 +80,9 @@
                     "unitPrice": -5.0,
                     "vatRate": 0.0,
                     "quantity": 1.0,
+                    "meta-sub-type": "VoucherLine",
                     "unitpriceinc": "-5.0000",
                     "meta-vatrate-source": "exact-0,corrected-no-vat",
-                    "meta-sub-type": "VoucherLine",
                     "meta-fields-calculated": "['vatamount (from vatrate)']",
                     "vatamount": 0.0
                 }
