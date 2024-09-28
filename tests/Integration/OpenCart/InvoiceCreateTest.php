@@ -15,7 +15,8 @@ use function dirname;
 /**
  * InvoiceCreateTest tests the process of creating an {@see Invoice}.
  *
- * @todo: add tests for other fees.
+ * @todo: add tests for other fees (OtherLineCollector).
+ * @todo: add a margin scheme invoice.
  */
 class InvoiceCreateTest extends OpenCartTest
 {
