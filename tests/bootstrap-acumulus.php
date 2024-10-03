@@ -61,6 +61,10 @@ class AcumulusTestsBootstrap
             // if we found --bootstrap, the value is in the next entry.
             if (is_int($i) && count($argv) > $i + 1) {
                 $bootstrapFile = $argv[$i + 1];
+            } elseif (count($argv) === 1 && str_contains($argv[0], 'extension')) {
+                $bootstrapFile = $argv[0];
+            }
+            if (isset($bootstrapFile)) {
                 $root = substr($bootstrapFile, 0, strpos($bootstrapFile, 'extension') - 1);
             }
         }
