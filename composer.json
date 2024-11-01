@@ -2,7 +2,7 @@
     "name": "siel/acumulus-opencart",
     "description": "Integrates OpenCart with your Siel Acumulus online administration",
     "type": "opencart-extension",
-    "version": "8.3.0",
+    "version": "8.3.4",
     "license": [
         "GPL-3.0"
     ],
