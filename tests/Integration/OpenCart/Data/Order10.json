@@ -43,16 +43,16 @@
                     "meta-sub-type": "ItemLine",
                     "meta-id": 42,
                     "meta-product-id": 28,
-                    "vatamount": 0.0,
+                    "vatAmount": 0.0,
                     "meta-unitprice-precision": 0.001,
                     "meta-vatamount-precision": 0.001,
                     "meta-vatclass-id": "9",
                     "meta-vatclass-name": "High",
                     "meta-vatrate-lookup": "['20.0000']",
                     "meta-vatrate-lookup-label": "['FR High']",
-                    "meta-vatrate-source": "exact-0",
-                    "unitpriceinc": 100.0,
-                    "meta-fields-calculated": "['unitpriceinc']"
+                    "meta-vat-rate-source": "exact-0",
+                    "unitPriceInc": 100.0,
+                    "meta-fields-calculated": "['unitPriceInc']"
                 },
                 {
                     "product": "Palm Treo Pro (Product 2)",
@@ -63,16 +63,16 @@
                     "meta-sub-type": "ItemLine",
                     "meta-id": 43,
                     "meta-product-id": 29,
-                    "vatamount": 0.0,
+                    "vatAmount": 0.0,
                     "meta-unitprice-precision": 0.001,
                     "meta-vatamount-precision": 0.001,
                     "meta-vatclass-id": "9",
                     "meta-vatclass-name": "High",
                     "meta-vatrate-lookup": "['20.0000']",
                     "meta-vatrate-lookup-label": "['FR High']",
-                    "meta-vatrate-source": "exact-0",
-                    "unitpriceinc": 279.99,
-                    "meta-fields-calculated": "['unitpriceinc']"
+                    "meta-vat-rate-source": "exact-0",
+                    "unitPriceInc": 279.99,
+                    "meta-fields-calculated": "['unitPriceInc']"
                 },
                 {
                     "product": "Flat Shipping Rate",
@@ -85,12 +85,12 @@
                     "meta-vatclass-name": "High",
                     "meta-vatrate-lookup": "['20.0000']",
                     "meta-vatrate-lookup-label": "['FR High']",
-                    "meta-vatrate-source": "completor-lookup",
+                    "meta-vat-rate-source": "completor-lookup",
                     "meta-strategy-split": false,
                     "meta-vatrate-lookup-matches": "[{'vatrate':20.0,'vattype':6}]",
-                    "unitpriceinc": 6.0,
-                    "meta-fields-calculated": "['vatamount (from vatrate)']",
-                    "vatamount": 1.0
+                    "unitPriceInc": 6.0,
+                    "meta-fields-calculated": "['vatAmount (from vatRate)']",
+                    "vatAmount": 1.0
                 },
                 {
                     "product": "Coupon (FREESHIPPING)",
@@ -99,10 +99,10 @@
                     "vatRate": 20.0,
                     "quantity": 1.0,
                     "meta-sub-type": "DiscountLine",
-                    "meta-vatrate-source": "strategy-completed",
+                    "meta-vat-rate-source": "strategy-completed",
                     "meta-strategy-split": true,
-                    "meta-fields-calculated": "['unitpriceinc']",
-                    "vatamount": -1.0,
+                    "meta-fields-calculated": "['unitPriceInc']",
+                    "vatAmount": -1.0,
                     "meta-completor-strategy-used": "ApplySameVatRate"
                 }
             ],

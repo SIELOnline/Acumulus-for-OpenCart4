@@ -42,7 +42,7 @@
                     "meta-sub-type": "ItemLine",
                     "meta-id": 37,
                     "meta-product-id": 33,
-                    "vatamount": 42.0,
+                    "vatAmount": 42.0,
                     "meta-unitprice-precision": 0.001,
                     "meta-vatamount-precision": 0.001,
                     "meta-vatclass-id": "9",
@@ -51,10 +51,10 @@
                     "meta-vatrate-lookup-label": "['BE High']",
                     "meta-vatrate-min": 20.999661200948637,
                     "meta-vatrate-max": 21.000338800948644,
-                    "meta-vatrate-source": "completor-range",
+                    "meta-vat-rate-source": "completor-range",
                     "meta-vatrate-range-matches": "[{'vatrate':21.0,'vattype':6}]",
-                    "unitpriceinc": 242.0,
-                    "meta-fields-calculated": "['unitpriceinc']"
+                    "unitPriceInc": 242.0,
+                    "meta-fields-calculated": "['unitPriceInc']"
                 },
                 {
                     "product": "Flat Shipping Rate",
@@ -67,12 +67,12 @@
                     "meta-vatclass-name": "High",
                     "meta-vatrate-lookup": "['21.0000']",
                     "meta-vatrate-lookup-label": "['BE High']",
-                    "meta-vatrate-source": "completor-lookup",
+                    "meta-vat-rate-source": "completor-lookup",
                     "meta-strategy-split": false,
                     "meta-vatrate-lookup-matches": "[{'vatrate':21.0,'vattype':6}]",
-                    "unitpriceinc": 6.05,
-                    "meta-fields-calculated": "['vatamount (from vatrate)']",
-                    "vatamount": 1.05
+                    "unitPriceInc": 6.05,
+                    "meta-fields-calculated": "['vatAmount (from vatRate)']",
+                    "vatAmount": 1.05
                 },
                 {
                     "product": "Gift Certificate (EUR5OFF)",
@@ -81,10 +81,10 @@
                     "vatRate": 0.0,
                     "quantity": 1.0,
                     "meta-sub-type": "VoucherLine",
-                    "unitpriceinc": "-5.0000",
-                    "meta-vatrate-source": "exact-0,corrected-no-vat",
-                    "meta-fields-calculated": "['vatamount (from vatrate)']",
-                    "vatamount": 0.0
+                    "unitPriceInc": "-5.0000",
+                    "meta-vat-rate-source": "exact-0,corrected-no-vat",
+                    "meta-fields-calculated": "['vatAmount (from vatRate)']",
+                    "vatAmount": 0.0
                 }
             ],
             "meta-source-type": "Order",
