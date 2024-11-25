@@ -41,7 +41,9 @@ class Acumulus extends Controller
             static::$acumulusContainer = new Container('OpenCart\OpenCart4');
             // Load our OcHelper that contains OC3 and OC4 shared code.
             static::$ocHelper = static::$acumulusContainer->getInstance(
-                'OcHelper', 'Helpers', [$this->registry, static::$acumulusContainer]
+                'OcHelper',
+                'Helpers',
+                [$this->registry, static::$acumulusContainer]
             );
         }
     }

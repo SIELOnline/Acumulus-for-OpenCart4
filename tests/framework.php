@@ -1,17 +1,16 @@
 <?php
 /**
- */
-
-/**
+ * @noinspection DuplicatedCode Proudly copied (and adapted) from /admin/framework.php to
+ *   get OpenCart up and running. Therefore, we do not alter the code to resolve
+ *   inspections, instead we disabled them for this file
  * @noinspection StaticClosureCanBeUsedInspection
  * @noinspection NullCoalescingOperatorCanBeUsedInspection
  * @noinspection PhpUnhandledExceptionInspection
  * @noinspection PhpUnnecessaryFullyQualifiedNameInspection
  * @noinspection PhpFullyQualifiedNameUsageInspection
  * @noinspection PhpMissingStrictTypesDeclarationInspection
- * @noinspection DuplicatedCode Proudly copied (and adapted) from /admin/framework.php to
- *   get OpenCart up and running.
- * @noinspection IncorrectFormatting  We do not reformat copied code
+ * @noinspection IncorrectFormatting
+ * @noinspection PhpUnusedLocalVariableInspection
  */
 
 function initOpenCartFramework(): \Opencart\System\Engine\Registry
@@ -202,8 +201,8 @@ function initOpenCartFramework(): \Opencart\System\Engine\Registry
 
     // Action error object to execute if any other actions cannot be executed.
     $action = '';
-    $args = [];
-    $output = '';
+//    $args = [];
+//    $output = '';
 
     $error = new \Opencart\System\Engine\Action($config->get('action_error'));
 
@@ -223,7 +222,7 @@ function initOpenCartFramework(): \Opencart\System\Engine\Registry
         if ($result instanceof \Exception) {
             $action = $error;
 
-            $error = '';
+//            $error = '';
 
             break;
         }

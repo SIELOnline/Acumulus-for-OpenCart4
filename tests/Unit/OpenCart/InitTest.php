@@ -25,7 +25,7 @@ class InitTest extends OpenCartTest
     public function testInit(): void
     {
         // 1.
-        $environmentInfo = $this->getAcumulusContainer()->getEnvironment()->get();
+        $environmentInfo = $this->getAcumulusContainer()->getEnvironment()->toArray();
         // 2.
         $this->assertMatchesRegularExpression('|\d+\.\d+\.\d+\.\d+|', $environmentInfo['shopVersion']);
         // 3.
