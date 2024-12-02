@@ -78,11 +78,11 @@
                     "product": "Gift Certificate (EUR5OFF)",
                     "nature": "Product",
                     "unitprice": -5.0,
-                    "vatrate": 0.0,
+                    "vatrate": -1.0,
                     "quantity": 1.0,
                     "meta-sub-type": "VoucherLine",
                     "unitpriceinc": -5.0,
-                    "meta-vatrate-source": "exact-0,corrected-no-vat",
+                    "meta-vatrate-source": "exact-0",
                     "meta-fields-calculated": "['vatamount (from vatrate)']",
                     "vatamount": 0.0
                 }
