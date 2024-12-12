@@ -19,23 +19,20 @@ trait AcumulusTestUtils
         copyLatestTestSources as protected parentCopyLatestTestSources;
     }
 
-    private static Container $container;
     private static OcHelper $ocHelper;
 
-    protected static function getAcumulusContainer(): Container
+    protected static function createContainer(): Container
     {
         /** @var \Opencart\System\Engine\Registry $ocRegistry */
         global $ocRegistry;
         // Load autoloader
         require_once dirname(__FILE__, 3) . '/vendor/autoload.php';
 
-        if (!isset(static::$container)) {
-            // Load our Container, language will be set by the helper.
-            static::$container = new Container('OpenCart\OpenCart4');
-            // Load our OcHelper that contains OC3 and OC4 shared code.
-            static::$ocHelper = static::$container->getInstance('OcHelper', 'Helpers', [$ocRegistry, static::$container]);
-        }
-        return static::$container;
+        // Load our Container, language will be set by the helper.
+        $container = new Container('OpenCart\OpenCart4');
+        // Load our OcHelper that contains OC3 and OC4 shared code.
+        static::$ocHelper = $container->getInstance('OcHelper', 'Helpers', [$ocRegistry, $container]);
+        return $container;
     }
 
     protected function getTestsPath(): string
@@ -55,7 +52,7 @@ trait AcumulusTestUtils
     protected static function getOcHelper(): OcHelper
     {
         if (!isset(static::$ocHelper)) {
-            self::getAcumulusContainer();
+            self::getContainer();
         }
         return static::$ocHelper;
     }

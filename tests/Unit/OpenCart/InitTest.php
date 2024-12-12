@@ -25,7 +25,7 @@ class InitTest extends OpenCartTest
     public function testInit(): void
     {
         // 1.
-        $environmentInfo = $this->getAcumulusContainer()->getEnvironment()->toArray();
+        $environmentInfo = $this->getContainer()->getEnvironment()->toArray();
         // 2.
         $this->assertMatchesRegularExpression('|\d+\.\d+\.\d+\.\d+|', $environmentInfo['shopVersion']);
         // 3.
@@ -34,7 +34,7 @@ class InitTest extends OpenCartTest
         /** @var \Opencart\System\Engine\Registry $ocRegistry */
         global $ocRegistry;
         /** @var \Siel\Acumulus\OpenCart\Helpers\Registry $registry */
-        $registry = $this->getAcumulusContainer()->getInstance('Registry', 'Helpers', [$ocRegistry]);
+        $registry = $this->getContainer()->getInstance('Registry', 'Helpers', [$ocRegistry]);
         $this->assertNotEmpty($registry->getOrderModel()->getOrder(1));
     }
 }
