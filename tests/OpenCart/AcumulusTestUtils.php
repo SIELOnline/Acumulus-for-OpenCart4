@@ -40,15 +40,6 @@ trait AcumulusTestUtils
         return dirname(__FILE__, 2);
     }
 
-    /**
-     * This override ensures that /OpenCart4 is not part of the test data path.
-     */
-    protected function getDataPath(): string
-    {
-        $shopNamespace = 'OpenCart';
-        return $this->getTestsPath() . "/Integration/$shopNamespace/Data";
-    }
-
     protected static function getOcHelper(): OcHelper
     {
         if (!isset(static::$ocHelper)) {

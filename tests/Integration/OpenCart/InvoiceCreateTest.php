@@ -10,8 +10,6 @@ namespace Siel\Acumulus\Tests\Integration\OpenCart;
 use Siel\Acumulus\Invoice\Source;
 use Siel\Acumulus\Tests\OpenCart\OpenCartTest;
 
-use function dirname;
-
 /**
  * InvoiceCreateTest tests the process of creating an {@see Invoice}.
  *
@@ -20,14 +18,13 @@ use function dirname;
  */
 class InvoiceCreateTest extends OpenCartTest
 {
-    public function InvoiceDataProvider(): array
+    public static function InvoiceDataProvider(): array
     {
-        $dataPath = dirname(__FILE__, 1) . '/Data';
         return [
-            'NL consument' => [$dataPath, Source::Order, 7,],
-            'BE consument, voucher' => [$dataPath, Source::Order, 8,],
-            'FR consument' => [$dataPath, Source::Order, 6,],
-            'FR bedrijf, EU VAT' => [$dataPath, Source::Order, 10,],
+            'NL consument' => [Source::Order, 7,],
+            'BE consument, voucher' => [Source::Order, 8,],
+            'FR consument' => [Source::Order, 6,],
+            'FR bedrijf, EU VAT' => [Source::Order, 10,],
         ];
     }
 
@@ -38,8 +35,8 @@ class InvoiceCreateTest extends OpenCartTest
      * @dataProvider InvoiceDataProvider
      * @throws \JsonException
      */
-    public function testCreate(string $dataPath, string $type, int $id, array $excludeFields = []): void
+    public function testCreate(string $type, int $id, array $excludeFields = []): void
     {
-        $this->_testCreate($dataPath, $type, $id, $excludeFields);
+        $this->_testCreate($type, $id, $excludeFields);
     }
 }

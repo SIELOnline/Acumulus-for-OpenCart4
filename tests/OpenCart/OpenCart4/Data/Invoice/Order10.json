@@ -6,6 +6,7 @@
         "contactstatus": 1,
         "email": "bedrijf.frankrijk@example.com",
         "overwriteifexists": 1,
+        "disableduplicates": 0,
         "companyname1": "SARL Travail",
         "fullname": "Bedrijf Frankrijk",
         "address1": "1 Route de Null",
