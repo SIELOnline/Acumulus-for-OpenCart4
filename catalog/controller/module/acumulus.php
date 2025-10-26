@@ -39,6 +39,7 @@ class Acumulus extends Controller
                 // Load our Container, language will be set by the helper.
                 $container = new Container('OpenCart\OpenCart4');
                 // Load our OcHelper that contains OC3 and OC4 shared code.
+                /** @noinspection PhpFieldAssignmentTypeMismatchInspection */
                 static::$staticOcHelper = $container->getInstance('OcHelper', 'Helpers', [$this->registry, $container]);
             }
             $this->ocHelper = static::$staticOcHelper;

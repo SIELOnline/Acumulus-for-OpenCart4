@@ -31,7 +31,6 @@ class Acumulus extends Controller
      */
     public function __construct(Registry $registry)
     {
-        /** @noinspection DuplicatedCode */
         parent::__construct($registry);
         if (!isset(static::$ocHelper)) {
             // Load autoloader.
@@ -40,12 +39,33 @@ class Acumulus extends Controller
             // Load our Container, language will be set by the helper.
             static::$acumulusContainer = new Container('OpenCart\OpenCart4');
             // Load our OcHelper that contains OC3 and OC4 shared code.
+            /** @noinspection PhpFieldAssignmentTypeMismatchInspection */
             static::$ocHelper = static::$acumulusContainer->getInstance(
                 'OcHelper',
                 'Helpers',
                 [$this->registry, static::$acumulusContainer]
             );
         }
+    }
+
+    /**
+     * Returns our Container.
+     *
+     * To be used by other modules, like acumulus_customise_invoice.
+     */
+    public static function getAcumulusContainer(): Container
+    {
+        return self::$acumulusContainer;
+    }
+
+    /**
+     * Returns our OcHelper.
+     *
+     * To be used by other modules, like acumulus_customise_invoice.
+     */
+    public static function getOcHelper(): OcHelper
+    {
+        return self::$ocHelper;
     }
 
     /**
@@ -186,11 +206,11 @@ class Acumulus extends Controller
     /**
      * Adds our stylesheet and javascript to the page header.
      *
-     * param string $route
+     * Param string $route
      *   The current route (common/column_left).
-     * param array $data
+     * Param array $data
      *   The data as will be passed to the view.
-     * param string $code
+     * Param string $code
      *
      * @noinspection PhpUnused : event handler
      */
@@ -202,12 +222,12 @@ class Acumulus extends Controller
     }
 
     /**
-     * Adds our menu-items to the admin menu.
+     * Adds our status overview as a tab to the order info view.
      *
      * @param string $route
      *   The current route (common/column_left).
      * @param array $data
-     *   The data as will be passed to the view.
+     *   The data as will be passed to the view: (extended) order data.
      * @param string $code
      *
      * @throws \Throwable
