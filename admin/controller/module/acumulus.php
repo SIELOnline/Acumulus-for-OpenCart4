@@ -1,5 +1,6 @@
 <?php
 /**
+ * @noinspection AutoloadingIssuesInspection
  * @noinspection PhpIllegalPsrClassPathInspection
  */
 
@@ -62,6 +63,8 @@ class Acumulus extends Controller
      * Returns our OcHelper.
      *
      * To be used by other modules, like acumulus_customise_invoice.
+     *
+     * @noinspection PhpUnused
      */
     public static function getOcHelper(): OcHelper
     {
