@@ -53,7 +53,7 @@ class AcumulusTestsBootstrap
     private function getRoot(): string
     {
         $root = dirname(__FILE__, 4);
-        // if our plugin is symlinked, we need to redefine root. Try to
+        // If our plugin is symlinked, we need to redefine root. Try to
         // find it by looking at the --bootstrap option as passed to phpunit.
         global $argv;
         if (is_array($argv)) {
@@ -75,10 +75,15 @@ class AcumulusTestsBootstrap
     {
         // Include necessary OpenCart files
         $root = $this->getRoot();
+//        $configFile = $root . '/admin1/config.php';
+        $contents = file_get_contents($root . '/admin1/index.php');
+        preg_match("/define\('VERSION', '((\d)\.(\d)\.(\d)\.(\d))'\)/", $contents, $matches);
+        [, $version, $major, $minor] = $matches;
+        $frameworkFile = __DIR__ . "/framework$major$minor.php";
 
         // Proudly copied (and adapted here and there) from index.php.
         // Version
-        define('VERSION', '4.0.2.3');
+        define('VERSION', $version);
 
         // Configuration
         require_once($root . '/admin1/config.php');
@@ -87,7 +92,7 @@ class AcumulusTestsBootstrap
         require_once(DIR_SYSTEM . 'startup.php');
 
         // Framework
-        require_once(__DIR__ . '/framework.php');
+        require_once($frameworkFile);
 
         global $ocRegistry;
         $ocRegistry = initOpenCartFramework();

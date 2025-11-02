@@ -8,12 +8,12 @@ declare(strict_types=1);
 namespace Siel\Acumulus\Tests\OpenCart;
 
 use OpenCart;
-use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
 /**
  * OpenCartTest is a base class for OpenCart Acumulus integration tests.
  */
-class OpenCartTest extends TestCase
+class TestCase extends PHPUnitTestCase
 {
     use AcumulusTestUtils;
 }

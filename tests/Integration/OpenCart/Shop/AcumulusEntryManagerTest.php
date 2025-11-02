@@ -14,12 +14,12 @@ use Siel\Acumulus\Invoice\Source;
 use Siel\Acumulus\OpenCart\Helpers\Registry;
 use Siel\Acumulus\Shop\AcumulusEntry;
 use Siel\Acumulus\Shop\AcumulusEntryManager;
-use Siel\Acumulus\Tests\OpenCart\OpenCartTest;
+use Siel\Acumulus\Tests\OpenCart\TestCase;
 
 /**
  * AcumulusEntryTest tests the CRUD actions on the acumulus entries storage in WordPress.
  */
-class AcumulusEntryManagerTest extends OpenCartTest
+class AcumulusEntryManagerTest extends TestCase
 {
     private const testSourceType = Source::Order;
     private const testSourceId = 9;

@@ -8,7 +8,7 @@ declare(strict_types=1);
 namespace Siel\Acumulus\Tests\Integration\OpenCart;
 
 use Siel\Acumulus\Invoice\Source;
-use Siel\Acumulus\Tests\OpenCart\OpenCartTest;
+use Siel\Acumulus\Tests\OpenCart\TestCase;
 
 /**
  * InvoiceCreateTest tests the process of creating an {@see Invoice}.
@@ -16,7 +16,7 @@ use Siel\Acumulus\Tests\OpenCart\OpenCartTest;
  * @todo: add tests for other fees (OtherLineCollector).
  * @todo: add a margin scheme invoice.
  */
-class InvoiceCreateTest extends OpenCartTest
+class InvoiceCreateTest extends TestCase
 {
     public static function InvoiceDataProvider(): array
     {

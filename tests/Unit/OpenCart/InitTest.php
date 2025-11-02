@@ -8,12 +8,12 @@ declare(strict_types=1);
 namespace Siel\Acumulus\Tests\Unit\OpenCart;
 
 use Siel\Acumulus\Config\Environment;
-use Siel\Acumulus\Tests\OpenCart\OpenCartTest;
+use Siel\Acumulus\Tests\OpenCart\TestCase;
 
 /**
  * Tests that WooCommerce and Acumulus have been initialized.
  */
-class InitTest extends OpenCartTest
+class InitTest extends TestCase
 {
     /**
      * A single test to see if the test framework (including the plugins) has been
