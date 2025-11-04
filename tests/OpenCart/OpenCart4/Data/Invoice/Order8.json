@@ -36,7 +36,6 @@
             "line": [
                 {
                     "product": "Samsung SyncMaster 941BW (Product 6)",
-                    "nature": "Product",
                     "unitprice": 200.0,
                     "vatrate": 21.0,
                     "quantity": 1.0,
@@ -59,7 +58,6 @@
                 },
                 {
                     "product": "Flat Shipping Rate",
-                    "nature": "Product",
                     "unitprice": 5.0,
                     "vatrate": 21.0,
                     "quantity": 1.0,
@@ -72,19 +70,18 @@
                     "meta-strategy-split": false,
                     "meta-vatrate-lookup-matches": "[{'vatrate':21.0,'vattype':6}]",
                     "unitpriceinc": 6.05,
-                    "meta-fields-calculated": "['vatamount (from vatrate)']",
+                    "meta-fields-calculated": "['unitpriceinc','vatamount (from vatrate)']",
                     "vatamount": 1.05
                 },
                 {
                     "product": "Gift Certificate (EUR5OFF)",
-                    "nature": "Product",
                     "unitprice": -5.0,
                     "vatrate": -1.0,
                     "quantity": 1.0,
                     "meta-sub-type": "VoucherLine",
                     "unitpriceinc": -5.0,
                     "meta-vatrate-source": "exact-0",
-                    "meta-fields-calculated": "['vatamount (from vatrate)']",
+                    "meta-fields-calculated": "['unitprice','vatamount (from vatrate)']",
                     "vatamount": 0.0
                 }
             ],
@@ -99,7 +96,7 @@
             "meta-shop-invoice-date": null,
             "meta-currency": "{'currency':'EUR','rate':1.0,'doConvert':false}",
             "meta-totals": "{'amountEx':200.0,'amountInc':243.05,'amountVat':43.05,'calculated':['amountEx']}",
-            "meta-vat-breakdown": "{'BE High':'43.0500'}",
+            "meta-vat-breakdown": "{'BE High':43.05}",
             "meta-prices-include-vat": false,
             "meta-add-emailaspdf-section": false,
             "meta-lines-amount": 200.0,

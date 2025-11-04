@@ -36,7 +36,6 @@
             "line": [
                 {
                     "product": "Canon EOS 5D (Product 3) (Select: Blue)",
-                    "nature": "Product",
                     "unitprice": 100.0,
                     "vatrate": 21.0,
                     "quantity": 1.0,
@@ -60,7 +59,6 @@
                 },
                 {
                     "product": "iPhone (product 11)",
-                    "nature": "Product",
                     "unitprice": 101.0,
                     "vatrate": 21.0,
                     "quantity": 1.0,
@@ -83,7 +81,6 @@
                 },
                 {
                     "product": "Flat Shipping Rate",
-                    "nature": "Product",
                     "unitprice": 5.0,
                     "vatrate": 21.0,
                     "quantity": 1.0,
@@ -96,7 +93,7 @@
                     "meta-strategy-split": false,
                     "meta-vatrate-lookup-matches": "[{'vatrate':21.0,'vattype':1}]",
                     "unitpriceinc": 6.05,
-                    "meta-fields-calculated": "['vatamount (from vatrate)']",
+                    "meta-fields-calculated": "['unitpriceinc','vatamount (from vatrate)']",
                     "vatamount": 1.05
                 }
             ],
@@ -111,7 +108,7 @@
             "meta-shop-invoice-date": null,
             "meta-currency": "{'currency':'EUR','rate':1.0,'doConvert':false}",
             "meta-totals": "{'amountEx':206.0,'amountInc':249.26,'amountVat':43.26,'calculated':['amountEx']}",
-            "meta-vat-breakdown": "{'NL High':'43.2600'}",
+            "meta-vat-breakdown": "{'NL High':43.26}",
             "meta-prices-include-vat": false,
             "meta-add-emailaspdf-section": false,
             "meta-lines-amount": 206.0,
